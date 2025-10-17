@@ -10,3 +10,12 @@
 -keepclasseswithmembers class * {
   public void onPayment*(...);
 }
+
+# Fix for R8 missing classes - SLF4J warnings
+-dontwarn org.slf4j.impl.StaticLoggerBinder
+-dontwarn org.slf4j.impl.StaticMDCBinder
+-dontwarn org.slf4j.impl.StaticMarkerBinder
+-keep class org.slf4j.** { *; }
+
+
+
